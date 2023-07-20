@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "vitrin-surf": {
+      "hosting": {
+        "vitrine-surf": [
+          "vitrin-surf"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "vitrin-surf"
+  }
+}
