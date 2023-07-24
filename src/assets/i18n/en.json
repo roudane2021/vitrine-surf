@@ -1,6 +1,12 @@
 {
-    "name": {
-        "p1": "rachid roudane EN",
-        "p2": "imane roudane EN"
+    "LOGIN": {
+        "TITLE": "LOGIN",
+        "SUB.TITLE": "Please enter your login and password!",
+        "CHAMPE.USERNAME": "Email address",
+        "CHAMPE.USERNAME.PLACEHOLDER": "name@example.com",
+        "CHAMPE.PASSWORD": "Password",
+        "CHAMPE.PASSWORD.PLACEHOLDER": "*******",
+        "BUTTON.LOGIN": "Login",
+        "BUTTON.LOGIN.LOADING": "Loading..."
     }
 }

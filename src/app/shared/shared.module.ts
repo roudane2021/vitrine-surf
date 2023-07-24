@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -10,10 +11,12 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     TranslateModule.forChild(),
+    ReactiveFormsModule
   ],
   exports: [
     RouterModule,
-    TranslateModule
+    TranslateModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule {

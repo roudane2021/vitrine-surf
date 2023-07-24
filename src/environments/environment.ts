@@ -1,4 +1,5 @@
 export const environment = {
+  apiUrl: '',
   firebase: {
     projectId: 'vitrin-surf',
     appId: '1:626663439955:web:583c77a7701a7fd08510a6',

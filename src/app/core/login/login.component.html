@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row d-flex m-5 justify-content-around">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card bg-white">
+          <div class="card-body p-5">
+            <form class="mb-3 mt-md-4" [formGroup]="loginForm">
+              <h2 class="fw-bold mb-2 text-uppercase ">{{ 'LOGIN.TITLE'| translate}}</h2>
+              <p class=" mb-5">{{ 'LOGIN.SUB.TITLE'| translate}}</p>
+              <div class="mb-3">
+                <label for="email" class="form-label ">{{ 'LOGIN.CHAMPE.USERNAME'| translate}}</label>
+                <input type="email"  [ngClass]="{'form-control':true,'border-danger': formsService.isValidAbstractControl( usernameCtrl ) }" placeholder="{{ 'LOGIN.CHAMPE.USERNAME.PLACEHOLDER'| translate}}" formControlName="email">
+                <div class="text-red" *ngIf=" formsService.isValidAbstractControl( usernameCtrl )" >
+                    {{formsService.getFormControlErrorText(usernameCtrl)}}
+                  </div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label ">Password</label>
+                <input type="password" [ngClass]="{'form-control':true,'border-danger': formsService.isValidAbstractControl( passwordCtrl ) }"  placeholder="{{ 'LOGIN.CHAMPE.PASSWORD.PLACEHOLDER'| translate}}" formControlName="password">
+                <div class="text-red" *ngIf=" formsService.isValidAbstractControl( passwordCtrl )" >
+                    {{formsService.getFormControlErrorText(passwordCtrl)}}
+                  </div>
+              </div>
+              <p class="small"><a class="text-primary" >Forgot password?</a></p>
+              <div class="d-grid">
+                <button class="btn btn-primary" type="button" [disabled]="loginForm.invalid && !loading" (click)="onSubmitForm()">
+                    <ng-container *ngIf="loading; then thenValid else elseValid">
+                    </ng-container>
+                    <ng-template #thenValid>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        {{ 'LOGIN.BUTTON.LOGIN.LOADING'| translate}}
+                    </ng-template>
+                    <ng-template #elseValid>
+                        {{ 'LOGIN.BUTTON.LOGIN'| translate}}
+                    </ng-template>
+                </button>
+              </div>
+            </form>
+            <div>
+              <p class="mb-0  text-center">Don't have an account? <a href="signup.html" class="text-primary fw-bold">Sign
+                  Up</a></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
