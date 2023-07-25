@@ -3,6 +3,9 @@ import { FormBuilder, FormGroup, FormControl, Validators, AbstractControl } from
 import { FormsService } from 'src/app/shared/services-general/forms-service';
 import { AuthService } from './services/auth.service';
 import { UserSignIn } from './models/login.model';
+import { ArticleService } from 'src/app/shared/services-general/artcle.service';
+import { map, tap } from 'rxjs';
+import { DocumentSnapshot } from 'firebase/firestore';
 
 
 @Component({
@@ -17,13 +20,15 @@ export class LoginComponent implements OnInit{
   usernameCtrl!: FormControl;
   passwordCtrl!: FormControl;
 
-  constructor( private fb : FormBuilder, public formsService: FormsService, private authService: AuthService) {
+  constructor( private fb : FormBuilder,
+              public formsService: FormsService, 
+              private authService: AuthService,
+              private articleService: ArticleService) {
     
   }
 
   ngOnInit(): void {
     this.initMainForm();
-    //this.authService.SignOut();
   }
 
   private initMainForm() {
@@ -45,6 +50,17 @@ export class LoginComponent implements OnInit{
     this.authService.SignIn(user);
     
 
+  }
+
+  onTestFirestore() {
+    //this.articleService.articleAdd({titre: 'titre 11'}).pipe(tap(result => console.table(result))).subscribe();
+    // 'p68G1biHiDkC1C6rDBCi'
+    //this.articleService.articleAdd({titre: 'titre 22'}).pipe(tap(result => console.table(result))).subscribe();
+    this.articleService.getWhereArticle('titre 22').pipe(
+      tap(
+        data => console.table(data)
+      )
+    ).subscribe();
   }
 
 

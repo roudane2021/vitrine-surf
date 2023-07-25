@@ -11,3 +11,21 @@ export const ERROR_MESSAGES = {
     email: 'Merci d\'entrer une adresse mail valide',
     NONE: 'Ce champ contient une erreur'
   }
+
+  export const COLLECTION_NAME = {
+    user: 'USER',
+    article: 'ARTICLE'
+  }
+
+  export const URL_IHM = {
+    vitrine: 'vitrine',
+    login: 'login'
+  }
+
+  export const NAME_VARIABLE = {
+    token: 'token'
+  }
+
+  export interface Article {
+    titre: string
+  }
