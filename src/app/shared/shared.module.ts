@@ -3,11 +3,14 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HasPermissionDirective } from './directives/has-permission/has-permission.directive';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HasPermissionDirective
+  ],
   imports: [
     CommonModule,
     TranslateModule.forChild(),
@@ -16,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   exports: [
     RouterModule,
     TranslateModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HasPermissionDirective
   ]
 })
 export class SharedModule {

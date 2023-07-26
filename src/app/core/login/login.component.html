@@ -33,7 +33,7 @@
                         {{ 'LOGIN.BUTTON.LOGIN'| translate}}
                     </ng-template>
                 </button>
-                <button class="btn btn-primary" type="button"  (click)="onTestFirestore()">Test FireStore</button>
+                <button *appHasPermission="[]" class="btn btn-primary" type="button"  (click)="onTestFirestore()">Test FireStore</button>
               </div>
             </form>
             <div>
